@@ -3,7 +3,7 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home"
-        android:title="Додому" />
+        android:title="Додому"/>
     <item
         android:id="@+id/navigation_search"
         android:icon="@drawable/ic_search"

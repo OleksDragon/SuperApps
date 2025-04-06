@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +37,21 @@ public class HomeActivity extends AppCompatActivity {
             // Анимация перехода
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         });
+
+        // Знаходимо BottomNavigationView
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+
+        // Встановлюємо слухач натискань
+        navView.setOnNavigationItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+            if (itemId == R.id.navigation_home) {
+                // Кнопка "Додому" натиснута
+                // Ми вже на HomeActivity, тому нічого не робимо
+                return true;
+            }
+            return false;
+        });
+        // Встановлюємо "Додому" як вибраний елемент за замовчуванням
+        navView.setSelectedItemId(R.id.navigation_home);
     }
 }
